@@ -58,7 +58,7 @@
 }
 
 .guide-action{
-	padding: 3.125em 5em;
+	padding: 2.5em 5em;
 	background-color: #eee;
 	-webkit-border-radius: 1em;
 	   -moz-border-radius: 1em;
@@ -74,11 +74,52 @@
 	padding:1.5em 0;
 	margin: 3em 0 1.5em 0;
 }
+.guide-process li{
+	width: 7.5em;
+	max-width:100%;
+	float:left;
+	padding-left:0;
+	margin-left:1.875em;
+	font-size:2em;
+	color: #0F91C5;
+	font-family: MuseoSansRounded-500, sans-serif;
+}
+.guide-process li p{
+	font-size:0.4375em;
+	color: #555;
+	font-family: sans-serif;
+}
+
+
+
+
 .guide-report{
+	clear:both;
 	border-bottom: 0.3125em solid #eee;
 	padding:0.75em 0;
 	text-align: center;
 }
+
+
+.guide-solved_problems {
+	padding:1.5em 0;
+}
+
+.guide-solved_problems .problem{
+	font-size:0.875em;
+}
+.guide-solved_problems .guide-desc,
+.guide-solved_problems .issues-list
+{
+	width:28.75em;
+	max-width: 100%;
+	float:left;
+	margin-bottom:3em;
+}
+.guide-solved_problems .guide-desc{
+	margin-right:1.25em;
+}
+
 
 
 
