@@ -11,24 +11,6 @@
 
   <%= render "shared/guides/#{@guide.partial_name}" %>
 
-  <aside class="guide-report">
-	<p><a href="#">Report A Problem</a></p>
-  </aside>
-
-  <section class="guide-solved_problems">
-
-	<h2>It worked for them&hellip;</h2>
-
-	<p>FixMyTransport gets things changed - have a look at
-	examples of public transport accessibility issues that we’ve
-	already helped to solve.</p>
-
-	<ul>
-      <%= render :partial => "shared/tiny_issue", :collection => @example_issues, :as => :issue %>
-	</ul>
-  </section>
-
-
   <footer>
 	<div class="guide-other-guides">
 	  <h2>Not quite what you were look for? Read one of our other guides:</h2>

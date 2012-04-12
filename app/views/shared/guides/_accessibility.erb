@@ -19,15 +19,21 @@
 
 <section class="guide-action">
   <h2>What can you do about it?</h2>
-  <p><a href="#">Report A Problem</a></p>
-  <p>Or have a look at some of the <a href="#">unresolved accessibility problems</a> that have been reported and add your support.</p>
+
+  <p><%= raw(link_to(raw(t('problems.frontpage.report_a_problem')), "/", :class => 'font-1 button green')) %></p>
+
+  <p>Or have a look at some of the <a href="#">unresolved
+  accessibility problems</a> that have been reported and add
+  your support.</p>
+
 </section>
 
 <section class="guide-process">
 
   <h2>How does it work?</h2>
 
-  <p>It’s simple – first press the big green button to get started, then:</p>
+  <p>It’s simple – first press the big green button to get
+  started, then:</p>
 
   <ol>
 
@@ -51,5 +57,23 @@
     press.</p></li>
 
   </ol>
+
+</section>
+
+<aside class="guide-report">
+  <p><%= raw(link_to(raw(t('problems.frontpage.report_a_problem')), "/", :class => 'font-1 button green')) %></p>
+</aside>
+
+<section class="guide-solved_problems">
+
+  <h2>It worked for them&hellip;</h2>
+
+  <p>FixMyTransport gets things changed - have a look at
+  examples of public transport accessibility issues that we’ve
+  already helped to solve.</p>
+
+  <ul>
+    <%= render :partial => "shared/tiny_issue", :collection => @example_issues, :as => :issue %>
+  </ul>
 
 </section>
