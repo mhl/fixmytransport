@@ -2,13 +2,21 @@ namespace :guides do
 
   desc 'Add the static guides to common problems'
   task :add_static_guides => :environment do
-    Guide.delete_all
-    Guide.create! :partial_name => "accessibility", :title => "Making your public transport accessible"
-    Guide.create! :partial_name => "bus_stop_fixed", :title => "Getting your bus stop fixed"
-    Guide.create! :partial_name => "rude_staff", :title => "Reporting rude transport staff"
-    Guide.create! :partial_name => "discontinued_bus", :title => "Getting bus routes reinstated"
-    Guide.create! :partial_name => "delayed_bus", :title => "Getting your bus to run on time"
-    Guide.create! :partial_name => "overcrowding", :title => "Overcrowded trains, and what to do about them"
+    { "accessibility" => "Making your public transport accessible",
+      "bus_stop_fixed" => "Getting your bus stop fixed",
+      "rude_staff" => "Reporting rude transport staff",
+      "discontinued_bus" => "Getting bus routes reinstated",
+      "delayed_bus" => "Getting your bus to run on time",
+      "overcrowding" => "Overcrowded trains, and what to do about them"
+    }.each do |partial_name, title|
+      g = Guide.find_by_partial_name partial_name
+      if g
+        g.title = title
+	g.save!
+      else
+        Guide.create! :partial_name => partial_name, :title => title
+      end
+    end
   end
 
 end
