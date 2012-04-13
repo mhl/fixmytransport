@@ -42,7 +42,7 @@ class StaticController < ApplicationController
   def show_guide
     @guide = Guide.find(params[:guide])
     @title = @guide.title
-    @all_guides = Guide.find(:all)
+    @all_guides = Guide.find(:all, :order => :title)
     # FIXME: get some real example issues, but for the moment, just
     # show the 3 most recent:
     @example_issues = Problem.find_recent_issues(5)
