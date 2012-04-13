@@ -93,7 +93,8 @@
 
 
 
-.guide-report{
+.guide-report
+{
 	clear:both;
 	border-bottom: 0.3125em solid #eee;
 	padding:0.75em 0;
@@ -120,7 +121,11 @@
 	margin-right:1.25em;
 }
 
-
+.guide footer{
+	border-bottom: 0.3125em solid #eee;
+	padding:0.75em 0;
+	clear:both;
+}
 
 
 a.report-problem-button{
