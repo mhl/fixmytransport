@@ -72,8 +72,8 @@
   examples of public transport accessibility issues that we’ve
   already helped to solve.</p>
 
-  <ul>
-    <%= render :partial => "shared/tiny_issue", :collection => @example_issues, :as => :issue %>
+  <ul class="issues-list">
+    <%= render :partial => "shared/issue", :collection => @example_issues, :as => :issue, :locals => { :context => :browse_issues } %>
   </ul>
 
 </section>
