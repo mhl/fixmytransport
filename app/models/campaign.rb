@@ -62,6 +62,14 @@ class Campaign < ActiveRecord::Base
     self.confirmed_at = Time.now
   end
 
+  def fixed?
+    self.status == :fixed
+  end
+
+  def confirmed_and_visible?
+    self.status == :confirmed
+  end
+
   def visible?
     [:confirmed, :fixed].include?(self.status)
   end

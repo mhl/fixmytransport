@@ -64,16 +64,6 @@
   <p><%= raw(link_to(raw(t('problems.frontpage.report_a_problem')), "/", :class => 'report-problem-button')) %></p>
 </aside>
 
-<section class="guide-solved_problems">
-
-  <h2>It worked for them&hellip;</h2>
-
-  <p>FixMyTransport gets things changed - have a look at
-  examples of public transport accessibility issues that we’ve
-  already helped to solve.</p>
-
-  <ul class="issues-list">
-    <%= render :partial => "shared/issue", :collection => @example_issues, :as => :issue, :locals => { :context => :browse_issues } %>
-  </ul>
-
-</section>
+<%= render :partial => "shared/guides_example_issues",
+           :locals => { :solved_issues => true,
+                        :description => "public transport accessibility problems" } %>

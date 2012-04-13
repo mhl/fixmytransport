@@ -1,0 +1,40 @@
+<% if @example_issues.empty? %>
+
+  <!-- No example issues to disply -->
+
+<% else %>
+
+  <%- if solved_issues %>
+
+    <section class="guide-solved_problems">
+
+      <h2>It worked for them&hellip;</h2>
+
+      <p>FixMyTransport gets things changed - have a look at
+      examples of <%= @description %> that we’ve already helped to
+      solve.</p>
+
+      <ul class="issues-list">
+        <%= render :partial => "shared/issue", :collection => @example_issues.select { |i| i.fixed? }, :as => :issue, :locals => { :context => :browse_issues } %>
+      </ul>
+
+    </section>
+
+  <% else %>
+
+    <section class="guide-unsolved_problems">
+
+      <h2>Can you help with these?</h2>
+
+      <p>The following <%= @description %> are still unsolved -
+      can you help with these?</p>
+
+      <ul class="issues-list">
+        <%= render :partial => "shared/issue", :collection => @example_issues.select { |i| i.confirmed_and_visible? }, :as => :issue, :locals => { :context => :browse_issues } %>
+      </ul>
+
+    </section>
+
+  <% end %>
+
+<% end %>

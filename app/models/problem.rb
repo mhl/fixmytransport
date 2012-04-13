@@ -244,6 +244,14 @@ class Problem < ActiveRecord::Base
     location.transport_modes.map{ |transport_mode| transport_mode.name }.join(", ")
   end
 
+  def fixed?
+    self.status == :fixed
+  end
+
+  def confirmed_and_visible?
+    self.status == :confirmed
+  end
+
   def visible?
     [:confirmed, :fixed].include?(self.status)
   end
