@@ -6,9 +6,9 @@
 
   <%- if solved_issues %>
 
-<section class="guide-solved_problems">
+<section class="guide-solved_problems" id="solved">
 
-  <h2>It worked for them&hellip;</h2>
+  <h2 id="solved">It worked for them&hellip;</h2>
 
     <div class="guide-desc">
       <p>FixMyTransport gets things changed - have a look at examples of <%= @description %> that we’ve already helped to solve.</p>
@@ -27,7 +27,7 @@
 
     <section class="guide-solved_problems">
 
-      <h2>Can you help with these?</h2>
+      <h2 id="unsolved">Can you help with these?</h2>
 
       <div class="guide-desc">
          <p>The following <%= @description %> are still unsolved -
