@@ -244,4 +244,6 @@ ActionController::Routing::Routes.draw do |map|
 
   end
 
+  map.connect '/:anything', :controller => 'options', :action => 'check', :conditions => { :method => :options }
+
 end
